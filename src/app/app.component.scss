@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Para que no pegue al techo pero tenga aire */
+  padding-top: 150px; 
+  min-height: 100vh;
+}
+
+.faq-card {
+  background-color: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 2.5rem;
+    color: var(--purple-950);
+    margin: 0;
+  }
+}
+
+.faq-item {
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    color: var(--purple-950);
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover { color: #AD28EB; }
+  }
+
+  .faq-answer p {
+    color: var(--purple-600);
+    line-height: 1.5;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+
+  .divider {
+    border: 0;
+    border-top: 1px solid var(--purple-100);
+    margin: 0;
+  }
+}
+
+.star-icon {
+  width: 24px; /* Tamaño pequeño para la estrella del título */
+  height: 24px;
+}
+
+.faq-question img {
+  width: 30px; /* Tamaño para los iconos de + y - */
+  height: 30px;
+  flex-shrink: 0; /* Evita que se aplasten */
+}
+
+.faq-card {
+  max-width: 600px;
+  width: 90%;
+  margin: 100px auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 1rem;
+  
+  h3 {
+    font-size: 1rem;
+    color: #2f1533; // Purple 950
+    &:hover { color: #ad28eb; }
+  }
+}
+
+.answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+  color: #8c6991; // Tu variable purple-600
+  
+  &.is-open {
+    max-height: 200px; // Un valor lo suficientemente grande
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.question h3 {
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #AD28EB; // El morado brillante del diseño original
+  }
+}

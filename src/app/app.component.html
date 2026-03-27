@@ -1,0 +1,24 @@
+<div class="faq-card">
+  <div class="header">
+    <img src="images/icon-star.svg" alt="star">
+    <h1>FAQs</h1>
+  </div>
+
+  <div class="faq-list">
+    @for (faq of faqs; track $index) {
+      <div class="faq-item">
+        <div class="question" (click)="toggleFaq($index)">
+          <h3>{{ faq.q }}</h3>
+          <img [src]="openIndex === $index ? 'images/icon-minus.svg' : 'images/icon-plus.svg'" alt="toggle">
+        </div>        
+       <p class="answer" [class.is-open]="openIndex === $index">
+          {{ faq.a }}
+        </p>
+        @if (!$last) { <hr> }
+      </div>
+    }
+  </div>
+</div>
+
+
+
